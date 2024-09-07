@@ -1,0 +1,102 @@
+.mainapp {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+body {
+    padding: 30px;
+    background-image: url(./assets/thunderstorm-countryside.jpg);
+    background-size: cover;
+}
+
+.card {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    width: 500px;
+}
+
+/* HTML: <div class="loader"></div> */
+/* .loader {
+    width: 25px;
+    aspect-ratio: 1.154;
+    position: relative;
+    background: conic-gradient(from 120deg at 50% 64%, #0000, #25b09b 1deg 120deg, #0000 121deg);
+    animation: l27-0 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    transform-origin: 50% 66%;
+    animation: l27-1 1.5s infinite;
+}
+
+.loader:after {
+    --s: -1;
+}
+
+@keyframes l27-0 {
+
+    0%,
+    30% {
+        transform: rotate(0)
+    }
+
+    70% {
+        transform: rotate(120deg)
+    }
+
+    70.01%,
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes l27-1 {
+    0% {
+        transform: rotate(calc(var(--s, 1)*120deg)) translate(0)
+    }
+
+    30%,
+    70% {
+        transform: rotate(calc(var(--s, 1)*120deg)) translate(calc(var(--s, 1)*-5px), 10px)
+    }
+
+    100% {
+        transform: rotate(calc(var(--s, 1)*120deg)) translate(0)
+    }
+} */
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 20px;
+    aspect-ratio: 1;
+    --c: linear-gradient(#000 0 0);
+    --r1: radial-gradient(farthest-side at bottom, #000 93%, #0000);
+    --r2: radial-gradient(farthest-side at top, #000 93%, #0000);
+    background:
+        var(--c), var(--r1), var(--r2),
+        var(--c), var(--r1), var(--r2),
+        var(--c), var(--r1), var(--r2);
+    background-repeat: no-repeat;
+    animation: l1 1s infinite alternate;
+}
+
+@keyframes l1 {
+
+    0%,
+    10% {
+        background-size: 8px 0, 8px 4px, 8px 4px;
+        background-position: 0 50%, 0 calc(50% - 2px), 0 calc(50% + 2px), 50% 50%, 50% calc(50% - 2px), 50% calc(50% + 2px), 100% 50%, 100% calc(50% - 2px), 100% calc(50% + 2px);
+    }
+
+    90%,
+    100% {
+        background-size: 8px 100%, 8px 4px, 8px 4px;
+        background-position: 0 50%, 0 -2px, 0 calc(100% + 2px), 50% 50%, 50% -2px, 50% calc(100% + 2px), 100% 50%, 100% -2px, 100% calc(100% + 2px);
+    }
+}
